@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '../views/chat/Login'
-import ChatRoom from '../views/chat/ChatRoom'
+import Login from '../views/Login'
+import ChatRoom from '../views/ChatRoom'
 
 Vue.use(VueRouter)
 
@@ -19,12 +19,6 @@ Vue.use(VueRouter)
      hidden:true
     }
 ]
-//解决重复访问路由地址报错
-const originalPush = VueRouter.prototype.push;
-VueRouter.prototype.push = function push(location) {
-  return originalPush.call(this, location).catch(err => err)
-};
-
 const router = new VueRouter({
   routes
 })

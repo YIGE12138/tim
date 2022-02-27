@@ -14,7 +14,7 @@
           <div class="main" :class="{ self: entry.self }">
             <p class="username">{{ entry.fromNickname }}</p>
             <img
-            @dblclick="takeAShot(entry.fromNickname,username)"
+              @dblclick="takeAShot(entry.fromNickname, username)"
               class="avatar"
               :src="entry.self ? user.userProfile : currentSession.userProfile"
               alt=""
@@ -40,7 +40,7 @@
           <div class="main" :class="{ self: entry.fromId == user.id }">
             <p class="username">{{ entry.fromName }}</p>
             <img
-              @dblclick="takeAShot(entry.fromName,username)"
+              @dblclick="takeAShot(entry.fromName, username)"
               class="avatar"
               :src="
                 entry.fromId == user.id ? user.userProfile : entry.fromProfile
@@ -106,8 +106,7 @@ export default {
             weekdays[date.getDay()]
           } ${timeRange} ${date.getHours()}:${date.getMinutes()}`;
         }
-      }
-      else
+      } else
         return `${date.getFullYear()}-${
           date.getMonth() + 1
         }-${date.getDate()} ${timeRange}  ${date.getHours()}:${date.getMinutes()}`;
@@ -124,107 +123,118 @@ export default {
     takeAShot(fromName, toName) {
       console.log("拍了一怕");
       let s = fromName + "拍了拍" + toName;
-     this.$message(s);
+      this.$message(s);
     },
   },
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 #message {
   padding: 15px;
   height: 60%;
   max-height: 63%;
   overflow-y: scroll;
   overflow-x: hidden;
-  ul {
-    list-style-type: none;
-    padding-left: 0px;
-    li {
-      margin-bottom: 15px;
-    }
-  }
-  .time {
-    text-align: center;
-    margin: 7px 0;
-    > span {
-      display: inline-block;
-      padding: 0 18px;
-      font-size: 12px;
-      color: #fff;
-      background-color: #dcdcdc;
-      border-radius: 2px;
-    }
-  }
-  .main {
-    .avatar {
-      float: left;
-      margin: 0 10px 0 0;
-      border-radius: 3px;
-      width: 30px;
-      height: 30px;
-    }
-    .text {
-      display: inline-block;
-      padding: 0 10px;
-      max-width: 80%;
-      background-color: #fafafa;
-      border-radius: 4px;
-      line-height: 30px;
-    }
-    .img {
-      display: inline-block;
-      height: 100px;
-      width: 100px;
-      margin-top: 15px;
-    }
-    .username {
-      position: relative;
-      left: 35px;
-      top: 11px;
-      margin: 0 0;
-      padding: 0 0;
-      border-radius: 4px;
-      line-height: 15px;
-      font-size: 10px;
-      color: grey;
-    }
-  }
-  .self {
-    text-align: right;
-    .avatar {
-      float: right;
-      margin: 0 0 0 10px;
-      border-radius: 3px;
-      width: 30px;
-      height: 30px;
-    }
-    .text {
-      display: inline-block;
-      padding: 0 10px;
-      max-width: 80%;
-      background-color: #b2e281;
-      border-radius: 4px;
-      line-height: 30px;
-    }
-    .img {
-      display: inline-block;
-      height: 100px;
-      width: 100px;
-      margin-top: 15px;
-    }
-    .username {
-      //display: inline-block;
-      position: relative;
-      left: 310px;
-      top: 11px;
-      margin: 0 0;
-      padding: 0 0;
-      width: 200px;
-      line-height: 15px;
-      font-size: 10px;
-      color: grey;
-    }
-  }
 }
+
+#message ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+#message ul li {
+  margin-bottom: 15px;
+}
+
+#message .time {
+  text-align: center;
+  margin: 7px 0;
+}
+
+#message .time > span {
+  display: inline-block;
+  padding: 0 18px;
+  font-size: 12px;
+  color: #fff;
+  background-color: #dcdcdc;
+  border-radius: 2px;
+}
+
+#message .main .avatar {
+  float: left;
+  margin: 0 10px 0 0;
+  border-radius: 3px;
+  width: 30px;
+  height: 30px;
+}
+
+#message .main .text {
+  display: inline-block;
+  padding: 0 10px;
+  max-width: 80%;
+  background-color: #fafafa;
+  border-radius: 4px;
+  line-height: 30px;
+}
+
+#message .main .img {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  margin-top: 15px;
+}
+
+#message .main .username {
+  position: relative;
+  left: 35px;
+  top: 11px;
+  margin: 0 0;
+  padding: 0 0;
+  border-radius: 4px;
+  line-height: 15px;
+  font-size: 10px;
+  color: grey;
+}
+
+#message .self {
+  text-align: right;
+}
+
+#message .self .avatar {
+  float: right;
+  margin: 0 0 0 10px;
+  border-radius: 3px;
+  width: 30px;
+  height: 30px;
+}
+
+#message .self .text {
+  display: inline-block;
+  padding: 0 10px;
+  max-width: 80%;
+  background-color: #b2e281;
+  border-radius: 4px;
+  line-height: 30px;
+}
+
+#message .self .img {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  margin-top: 15px;
+}
+
+#message .self .username {
+  position: relative;
+  left: 310px;
+  top: 11px;
+  margin: 0 0;
+  padding: 0 0;
+  width: 200px;
+  line-height: 15px;
+  font-size: 10px;
+  color: grey;
+}
+
 </style>

@@ -32,7 +32,7 @@
           v-on:click="changeCurrentSession(item)"
           :key="item.index"
         >
-          <div style="display: flex; justify-content: center">
+          <div style="display: flex; justify-content: flex-start">
             <div>
               <el-badge
                 :is-dot="isDot[user.username + '#' + item.username]"
@@ -69,12 +69,7 @@ export default {
       chatObj: { username: "群聊", nickname: "群聊" },
     };
   },
-  computed: mapState([
-    "users",
-    "currentSession",
-    "isDot",
-    "currentList",
-  ]),
+  computed: mapState(["users", "currentSession", "isDot", "currentList"]),
   methods: {
     changeCurrentSession: function (currentSession) {
       this.$store.commit("changeCurrentSession", currentSession);
@@ -83,42 +78,47 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-#list {
-  ul {
-    margin-left: 0px;
-    padding-left: 0px;
-    margin-left: 2px;
-  }
-  li {
-    padding-top: 14px;
-    padding-bottom: 14px;
-    list-style: none;
-    cursor: pointer;
-    &:hover {
-      background-color: #d8d6d6;
-    }
-  }
-  li.active {
-    background-color: #c8c6c6;
-  }
-  .avatar {
-    border-radius: 2px;
-    width: 30px;
-    height: 30px;
-    vertical-align: middle;
-  }
-  .name {
-    display: inline-block;
-    margin-left: 15px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-  .userList {
-    max-height: 600px;
-  }
-  .el-scrollbar__wrap.default-scrollbar__wrap {
-    overflow-x: auto;
-  }
+<style scoped>
+#list ul {
+  margin-left: 0px;
+  padding-left: 0px;
+  margin-left: 2px;
+}
+
+#list li {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  list-style: none;
+  cursor: pointer;
+}
+
+#list li:hover {
+  background-color: #d8d6d6;
+}
+
+#list li.active {
+  background-color: #c8c6c6;
+}
+
+#list .avatar {
+  border-radius: 2px;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+#list .name {
+  display: inline-block;
+  margin-left: 15px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#list .userList {
+  max-height: 600px;
+}
+
+#list .el-scrollbar__wrap.default-scrollbar__wrap {
+  overflow-x: auto;
 }
 </style>

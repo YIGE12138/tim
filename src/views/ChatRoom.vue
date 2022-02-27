@@ -15,14 +15,14 @@
 </template>
 
 <script>
-  import list from '../../components/chat/list.vue'
-  import message from '../../components/chat/message.vue'
-  import usertext from '../../components/chat/usertext.vue'
-  import toolbar from "../../components/chat/toolbar";
-  import chattitle from "../../components/chat/chattitle"
+  import list from '../components/list.vue'
+  import message from '../components/message.vue'
+  import usertext from '../components/usertext.vue'
+  import toolbar from "../components/toolbar.vue";
+  import chattitle from "../components/chattitle.vue"
 
   export default {
-    //改好了
+
     name: 'ChatRoom',
     mounted:function() {
       this.$store.dispatch('initData');

@@ -59,66 +59,70 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 #toolbar {
   width: 100%;
   height: 100%;
-  #btnBar {
-    width: 100%;
-    height: 82%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .imgProfile {
-    width: 40px;
-    height: 40px;
-    horiz-align: center;
-    margin: 25px 10px;
-  }
-  .toolBtn {
-    background-color: #2e3238;
-    border: 0;
-    margin: 5px 5px;
-  }
-  .feedbackDialog {
-    width: 1000px;
-    height: 800px;
-    margin: 10px auto;
-    //background-color: #ECEAE8;
-  }
-  .feedbackInput {
-    width: 450px;
-    height: 200px;
-    resize: none;
-    padding: 0;
-    margin: 0;
-  }
+}
+
+#toolbar #btnBar {
+  width: 100%;
+  height: 82%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#toolbar .imgProfile {
+  width: 40px;
+  height: 40px;
+  horiz-align: center;
+  margin: 25px 10px;
+}
+
+#toolbar .toolBtn {
+  background-color: #2e3238;
+  border: 0;
+  margin: 5px 5px;
+}
+
+#toolbar .feedbackDialog {
+  width: 1000px;
+  height: 800px;
+  margin: 10px auto;
+}
+
+#toolbar .feedbackInput {
+  width: 450px;
+  height: 200px;
+  resize: none;
+  padding: 0;
+  margin: 0;
 }
 
 #moreList {
   margin: 0px;
   padding: 0px;
   background-color: #2e3238;
-  li {
-    padding-top: 14px;
-    padding-bottom: 14px;
-    padding-left: 5px;
-    //padding-right: 40px;
-    //border-bottom: 1px solid #292C33;
-    list-style: none;
-    cursor: pointer;
-    &:hover {
-      background-color: #abaaaa;
-    }
-  }
 }
+
+#moreList li {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 5px;
+  list-style: none;
+  cursor: pointer;
+}
+
+#moreList li:hover {
+  background-color: #abaaaa;
+}
+
 </style>
-<style lang="scss">
+<style >
 .el-popover.moreListPopoverClass {
   height: 150px;
   width: 150px;
-  // margin: 0px;
   margin-left: 10px;
   padding: 0px;
   overflow-x: hidden;
