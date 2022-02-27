@@ -14,6 +14,7 @@
           <div class="main" :class="{ self: entry.self }">
             <p class="username">{{ entry.fromNickname }}</p>
             <img
+            @dblclick="takeAShot(entry.fromNickname,username)"
               class="avatar"
               :src="entry.self ? user.userProfile : currentSession.userProfile"
               alt=""

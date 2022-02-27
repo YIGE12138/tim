@@ -13,7 +13,7 @@ proxyObj['/']={
 }
 module.exports={
   devServer:{
-    host:'http://locahost',
+    host:'localhost',
     port:8080,
     proxy:proxyObj
   }

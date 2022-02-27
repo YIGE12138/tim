@@ -36,7 +36,7 @@ axios.interceptors.response.use(success=>{
   return;
 })
 
-let base='120.24.179.229：8082';
+let base='';
 
 export const postKeyValueRequest=(url,params)=>{
   return axios({
